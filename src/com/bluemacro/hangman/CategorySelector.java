@@ -15,20 +15,23 @@ public class CategorySelector {
     private static CategoryType category;
 
     public static void pickCategory() throws IllegalArgumentException {
+        boolean repeat = true;
         Scanner s = new Scanner(System.in);
         System.out.print("Hello " + UserName.getUserName() + "! Pick a category. Your categories are:"
                 + java.util.Arrays.asList(values()));
         System.out.println("");
 
-        try {
-            String categoryStr = s.nextLine();
-            // convert String to enum - CATEGORYTYPE
-            category = valueOf(categoryStr.toUpperCase());
-        } catch (Exception e) {
-            System.out.println("Wrong input, you must enter one of the following categories: " +
-                    java.util.Arrays.asList(values()));
-            String categoryStr = s.nextLine();
-            category = valueOf(categoryStr.toUpperCase());
+        while (repeat) {
+            try {
+                String categoryStr = s.nextLine();
+                category = valueOf(categoryStr.toUpperCase());
+                // convert String to enum - CATEGORYTYPE
+                repeat = false;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Wrong input, you must enter one of the following categories: " +
+                        java.util.Arrays.asList(values()));
+                repeat = true;
+            }
         }
 
             switch (category) {
@@ -52,6 +55,7 @@ public class CategorySelector {
         return result;
     }
 
-    }
+}
+
 
 
