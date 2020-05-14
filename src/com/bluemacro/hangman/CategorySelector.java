@@ -18,13 +18,13 @@ public class CategorySelector {
         boolean repeat = true;
         Scanner s = new Scanner(System.in);
         System.out.print("Hello " + UserName.getUserName() + "! Pick a category. Your categories are:"
-                + java.util.Arrays.asList(values()));
+                + java.util.Arrays.asList(values())); // Lists Enum Choices
         System.out.println("");
 
         while (repeat) {
             try {
                 String categoryStr = s.nextLine();
-                category = valueOf(categoryStr.toUpperCase());
+                category = valueOf(categoryStr.toUpperCase()); // captures input to uppercase
                 // convert String to enum - CATEGORYTYPE
                 repeat = false;
             } catch (IllegalArgumentException e) {

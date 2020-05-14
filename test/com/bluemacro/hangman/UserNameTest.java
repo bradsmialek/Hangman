@@ -1,5 +1,11 @@
 package com.bluemacro.hangman;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.Scanner;
+
 import static org.junit.Assert.*;
 
 /**
@@ -7,19 +13,21 @@ import static org.junit.Assert.*;
  */
 public class UserNameTest {
 
-    @org.junit.Before
+    @Before
     public void setUp() throws Exception {
+        Scanner myObj = new Scanner(System.in);
     }
 
-    @org.junit.After
+    @After
     public void tearDown() throws Exception {
     }
 
-    @org.junit.Test
+    @Test
     public void setUserName() {
+        
     }
 
-    @org.junit.Test
+    @Test
     public void getUserName() {
     }
 }

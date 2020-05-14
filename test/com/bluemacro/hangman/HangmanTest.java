@@ -1,5 +1,9 @@
 package com.bluemacro.hangman;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -7,19 +11,19 @@ import static org.junit.Assert.*;
  */
 public class HangmanTest {
 
-    @org.junit.Before
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.After
-    public void tearDown() throws Exception {
-    }
-
-    @org.junit.Test
+    @Test
     public void guessWords() {
+        Hangman hang = new Hangman();
+        hang.guessWords("s");
+        CategorySelector.word = "soccer";
+
+        assertTrue(Hangman.emptyString.contains("s_____"));
+
     }
 
-    @org.junit.Test
+    @Test
     public void paintHangman() {
+//        Hangman hangman = new Hangman();
+//        hangman.paintHangman();
     }
 }

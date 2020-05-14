@@ -1,5 +1,9 @@
 package com.bluemacro.hangman;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -7,19 +11,23 @@ import static org.junit.Assert.*;
  */
 public class CategorySelectorTest {
 
-    @org.junit.Before
+    @Before
     public void setUp() throws Exception {
     }
 
-    @org.junit.After
+    @After
     public void tearDown() throws Exception {
     }
 
-    @org.junit.Test
+    @Test
     public void pickCategory() {
+        CategorySelector.word = "ball";
+
+        assertTrue(CategorySelector.word.contains("a") );
+        assertFalse(CategorySelector.word.contains("z"));
     }
 
-    @org.junit.Test
+    @Test
     public void randomWord() {
     }
 }
