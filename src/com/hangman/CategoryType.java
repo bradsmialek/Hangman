@@ -1,4 +1,4 @@
-package com.bluemacro.hangman;
+package com.hangman;
 
 /** This enum represents the categories available for the user to choose.
  * @author Brandon Myers and Brad Smialek

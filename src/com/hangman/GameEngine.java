@@ -1,4 +1,4 @@
-package com.bluemacro.hangman;
+package com.hangman;
 import java.util.Scanner;
 /** This class contains the main game logic allowing the user to guess a word,
  * and forces the user to set a username by calling setUserName from UserName class.
@@ -15,7 +15,7 @@ public class GameEngine {
         CategorySelector.pickCategory();
         Scanner sc = new Scanner(System.in);
 
-
+        // TRACKS COUNT AND WORD BUILD AS BASE TO END GAME
         while (Hangman.count < 7 && Hangman.emptyString.contains("_")) {
 
             System.out.println("Guess any letter in the word");
@@ -24,7 +24,7 @@ public class GameEngine {
             Hangman.guessWords(guess);
         }
 
-            sc.close();
+        sc.close(); // CLOSES SCANNER
     }
 }
 

@@ -1,4 +1,4 @@
-package com.bluemacro.hangman;
+package com.hangman;
 
 /** This class represents the logic for the actual Hangman game that involves user input,
  *  and paints the Hangman whenever the input is incorrect.
@@ -10,13 +10,32 @@ public class Hangman {
      *  For every character within a string(word), an underscore is put in its place.
      */
     protected static String emptyString =
-            new String(new char[CategorySelector.word.length()]).replace("\0", "_");
+            new String(new char[CategorySelector.word.length()]).replace("\0", "_"); // grabs word
+
+    /** Does this:
+    public void guess(String word) {
+        System.out.println(word);
+        this.word = word;
+
+        char[] charSpaces = new char[word.length()];
+        int i = 0;
+        while (i < word.length()) {
+            charSpaces[i] = '_';
+            if (word.charAt(i) == ' ') {
+                charSpaces[i] = ' ';
+            }
+            i+
+        }
+        str = String.valueOf(charSpaces);
+    }
+     */
+
     /**
      *  The counter starts at zero as a default when the user has not yet input a character guess.
      */
     protected static int count = 0;
 
-    /** Checks to see if the user's input of a character matches the character at any character within the
+    /** Checks to see if the user's input character matches the character within the word
      *  string (word) uses a for loop to go down every character starting at 0 (the first character in the word).
      *  If the guess is correct then the underscore is replaced with the correct character.
      *  If not correct, the underscore stays there, the counter goes up by 1 and a body part is drawn on the hangman.
@@ -26,7 +45,7 @@ public class Hangman {
 
     public static void guessWords(String guess) {
         String newEmptyString = "";
-        for (int i = 0; i < CategorySelector.word.length(); i++) {
+        for (int i = 0; i < CategorySelector.word.length(); i++) {  // Grabbing word
             if (CategorySelector.word.charAt(i) == guess.charAt(0)) {
                 newEmptyString += guess.charAt(0);
             } else if (emptyString.charAt(i) != '_') {

@@ -1,4 +1,4 @@
-package com.bluemacro.hangman;
+package com.hangman;
 
 import org.junit.After;
 import org.junit.Before;

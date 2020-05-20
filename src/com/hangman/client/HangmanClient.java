@@ -1,5 +1,6 @@
-package com.bluemacro.hangman.client;
-import com.bluemacro.hangman.GameEngine;
+package com.hangman.client;
+import com.hangman.GameEngine;
+
 /** This class allows the user to start the game.
  * @author Brandon Myers and Brad Smialek
  * @author Blue Macro
