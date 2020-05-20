@@ -12,24 +12,6 @@ public class Hangman {
     protected static String emptyString =
             new String(new char[CategorySelector.word.length()]).replace("\0", "_"); // grabs word
 
-    /** Does this:
-    public void guess(String word) {
-        System.out.println(word);
-        this.word = word;
-
-        char[] charSpaces = new char[word.length()];
-        int i = 0;
-        while (i < word.length()) {
-            charSpaces[i] = '_';
-            if (word.charAt(i) == ' ') {
-                charSpaces[i] = ' ';
-            }
-            i+
-        }
-        str = String.valueOf(charSpaces);
-    }
-     */
-
     /**
      *  The counter starts at zero as a default when the user has not yet input a character guess.
      */
